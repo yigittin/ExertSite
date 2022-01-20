@@ -1,0 +1,36 @@
+﻿@model ExertSite.Models.Portfolio
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Portfolio</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PortfolioImage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PortfolioImage)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PortfolioName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PortfolioName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PortfolioText)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PortfolioText)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PortfolioId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
