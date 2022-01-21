@@ -10,5 +10,9 @@ namespace ExertSite.Models
         public IEnumerable<ExertSite.Models.Slider> Sliders { get; set; }
         public IEnumerable<ExertSite.Models.Portfolio> Portfolios { get; set; }
 
+        public IEnumerable<ExertSite.Models.Project> Projects { get; set; }
+
+        public IEnumerable<ExertSite.Models.Service> Services { get; set; }
+
     }
 }

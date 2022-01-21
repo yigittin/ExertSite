@@ -26,6 +26,8 @@ namespace ExertSite.Controllers
             Container viewModel = new Container();
             viewModel.Sliders = _context.Sliders;
             viewModel.Portfolios = _context.Portfolios;
+            viewModel.Services = _context.Services;
+            viewModel.Projects = _context.Projects;
 
             
             

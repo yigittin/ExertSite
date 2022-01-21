@@ -389,18 +389,25 @@
 
             <div class="row">
 
+            @foreach(var items in Model.Services)
+            {
+                if (items.ServiceId == 1)
+                {
+
                 <!-- Service Item 1 -->
                 <div class="col-md-3 col-sm-6 m-bottom-20">
                     <div class="service wow zoomIn" data-wow-duration="1s" data-wow-delay="0.6s">
                         <div class="service-icon">
                             <i class="fa fa-desktop" aria-hidden="true"></i>
                         </div>
-                        <h4>Web Design</h4>
+                        <h4>@items.ServiceName</h4>
                         <div class="service-text">
-                            <p>On at tolerably depending do perceived. Luckily eat joy see own shyness minuter. So before remark at depart Did son unreserved.</p>
+                            <p>@items.ServiceText</p>
                         </div>
                     </div>
                 </div> <!-- /.col -->
+                }
+            }
                 <!-- Service Item 2 -->
                 <div class="col-md-3 col-sm-6 m-bottom-20">
                     <div class="service wow zoomIn" data-wow-duration="1s" data-wow-delay="0.6s">
@@ -438,6 +445,7 @@
                     </div>
                 </div> <!-- /.col -->
 
+
             </div> <!-- /.row -->
 
         </div> <!-- /.container -->
@@ -456,26 +464,33 @@
             <!-- Portfolio-filter -->
             <ul class="pf-filter text-center list-inline">
                 <li><a href="#" data-filter="*" class="iso-active iso-button">All</a></li>
-                <li><a href="#" data-filter=".graphic" class="iso-button">Graphic</a></li>
+                @foreach(var items in Model.Services)
+            {
+                <li><a href="#" data-filter=".@items.ServiceId" class="iso-button">@items.ServiceName</a></li>
+            }
+                @*<li><a href="#" data-filter=".graphic" class="iso-button">Graphic</a></li>
                 <li><a href="#" data-filter=".webdesign" class="iso-button">Web Design</a></li>
                 <li><a href="#" data-filter=".branding" class="iso-button">Branding</a></li>
-                <li><a href="#" data-filter=".video" class="iso-button">Video</a></li>
+                <li><a href="#" data-filter=".video" class="iso-button">Video</a></li>*@
             </ul>
 
             <!-- Portfolio -->
             <div class="portfolio portfolio-isotope col-3 gutter">
 
+            @foreach(var items in Model.Projects)
+            {
+
                 <!-- Portfolio Item -->
-                <div class="pf-item branding">
-                    <a href="img/portfolio/1.jpg" class="pf-style lightbox-image mfp-image">
+                <div class="pf-item @items.ServiceId">
+                    <a href="@items.ProjectImage" class="pf-style lightbox-image mfp-image">
                         <div class="pf-image">
-                            <img src="img/portfolio/1.jpg" alt="">
+                            <img src="@items.ProjectImage" alt="">
                             <div class="overlay">
                                 <div class="overlay-caption">
                                     <div class="overlay-content">
                                         <div class="pf-info white-color">
                                             <h4 class="pf-title">Project Name</h4>
-                                            <p>Branding</p>
+                                            <p>@items.ProjectName</p>
                                         </div> <!-- .pf-info -->
                                     </div> <!-- .overlay-content -->
                                 </div> <!-- .overlay-caption -->
@@ -483,9 +498,10 @@
                         </div> <!-- .pf-image -->
                     </a> <!-- .pf-style -->
                 </div>
+            }
 
                 <!-- Portfolio Item -->
-                <div class="pf-item graphic webdesign">
+                <!--<div class="pf-item graphic webdesign">
                     <a href="img/portfolio/2.jpg" class="pf-style lightbox-image mfp-image">
                         <div class="pf-image">
                             <img src="img/portfolio/2.jpg" alt="">
@@ -495,16 +511,16 @@
                                         <div class="pf-info white-color">
                                             <h4 class="pf-title">Project Name</h4>
                                             <p>Graphic, Web Design</p>
-                                        </div> <!-- .pf-info -->
-                                    </div> <!-- .overlay-content -->
-                                </div> <!-- .overlay-caption -->
-                            </div> <!-- .overlay -->
-                        </div> <!-- .pf-image -->
-                    </a> <!-- .pf-style -->
-                </div>
+                                        </div>--> <!-- .pf-info -->
+                                    <!--</div>--> <!-- .overlay-content -->
+                                <!--</div>--> <!-- .overlay-caption -->
+                            <!--</div>--> <!-- .overlay -->
+                        <!--</div>--> <!-- .pf-image -->
+                    <!--</a>--> <!-- .pf-style -->
+                <!--</div>-->
 
                 <!-- Portfolio Item -->
-                <div class="pf-item video webdesign">
+                <!--<div class="pf-item video webdesign">
                     <a href="https://www.youtube.com/watch?v=6D-A6CL3Pv8" class="pf-style lightbox-video mfp-iframe">
                         <div class="pf-image">
                             <img src="img/portfolio/3.jpg" alt="">
@@ -514,16 +530,16 @@
                                         <div class="pf-info white-color">
                                             <h4 class="pf-title">Project Name</h4>
                                             <p>Video, Web Design</p>
-                                        </div> <!-- .pf-info -->
-                                    </div> <!-- .overlay-content -->
-                                </div> <!-- .overlay-caption -->
-                            </div> <!-- .overlay -->
-                        </div> <!-- .pf-image -->
-                    </a> <!-- .pf-style -->
-                </div>
+                                        </div>--> <!-- .pf-info -->
+                                    <!--</div>--> <!-- .overlay-content -->
+                                <!--</div>--> <!-- .overlay-caption -->
+                            <!--</div>--> <!-- .overlay -->
+                        <!--</div>--> <!-- .pf-image -->
+                    <!--</a>--> <!-- .pf-style -->
+                <!--</div>-->
 
                 <!-- Portfolio Item -->
-                <div class="pf-item video webdesign">
+                <!--<div class="pf-item video webdesign">
                     <a href="https://www.youtube.com/watch?v=6D-A6CL3Pv8" class="pf-style lightbox-video mfp-iframe">
                         <div class="pf-image">
                             <img src="img/portfolio/4.jpg" alt="">
@@ -533,16 +549,17 @@
                                         <div class="pf-info white-color">
                                             <h4 class="pf-title">Project Name</h4>
                                             <p>Video, Web Design</p>
-                                        </div> <!-- .pf-info -->
-                                    </div> <!-- .overlay-content -->
-                                </div> <!-- .overlay-caption -->
-                            </div> <!-- .overlay -->
-                        </div> <!-- .pf-image -->
-                    </a> <!-- .pf-style -->
-                </div>
+                                        </div>--> <!-- .pf-info -->
+                                    <!--</div>--> <!-- .overlay-content -->
+                                <!--</div>--> <!-- .overlay-caption -->
+                            <!--</div>--> <!-- .overlay -->
+                        <!--</div>--> <!-- .pf-image -->
+                    <!--</a>--> <!-- .pf-style -->
+                <!--</div>-->
 
                 <!-- Portfolio Item -->
-                <div class="pf-item branding graphic">
+            
+            <div class="pf-item branding graphic">
                     <a href="img/portfolio/5.jpg" class="pf-style lightbox-image mfp-image">
                         <div class="pf-image">
                             <img src="img/portfolio/5.jpg" alt="">
