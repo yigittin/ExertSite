@@ -21,6 +21,8 @@ namespace ExertSite.Data
         public DbSet<Service> Services { get; set; }
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<ExertSite.Models.Contact> Contact { get; set; }
+        public DbSet<ExertSite.Models.GrowText> GrowText { get; set; }
 
     }
 }

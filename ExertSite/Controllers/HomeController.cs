@@ -1,4 +1,5 @@
-﻿using ExertSite.Models;
+﻿using ExertSite.Data;
+using ExertSite.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,16 +13,23 @@ namespace ExertSite.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,ApplicationDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
+            Container viewModel = new Container();
+            viewModel.Sliders = _context.Sliders;
+            viewModel.Portfolios = _context.Portfolios;
 
-            return View();
+            
+            
+            return View(viewModel);
         }
 
         public IActionResult Admin()

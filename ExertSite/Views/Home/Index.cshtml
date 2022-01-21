@@ -1,4 +1,5 @@
-﻿@{Layout = "/Views/Shared/_Layout.cshtml"; }
+﻿@model ExertSite.Models.Container
+@{Layout = "/Views/Shared/_Layout.cshtml"; }
 
 <!DOCTYPE html>
 <html lang="en">
@@ -108,14 +109,22 @@
     <!-- End Navigation -->
     <!-- Start Intro -->
     <section id="slider">
-        <div class="rev_slider_wrapper fullscreen-container" data-alias="agency-website" id="rev_slider_280_1_wrapper" style="background-color:#fff; padding:0px;height:1080px;">
+      
+
+
+
+<div class="rev_slider_wrapper fullscreen-container" data-alias="agency-website" id="rev_slider_280_1_wrapper" style="background-color:#fff; padding:0px;height:1080px;">
             <!-- START REVOLUTION SLIDER 5.1.4 fullscreen mode -->
             <div class="rev_slider fullscreenbanner" id="rev_slider_nagency" style="display:none;">
                 <ul style="display:none;">
-
+                      @foreach(var items in Model.Sliders)
+            {
                     <!-- slider Item 1 -->
+                    @if (items.SliderId == 1)
+                {
+
                     <li data-index="rs-1" data-transition="fadetotopfadefrombottom" data-slotamount="default" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="N.Agency" data-description="">
-                        <img src="~/img/slider/s1.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                        <img src="@items.SliderImage" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 
                         <!-- LAYER NR. 1 -->
                         <div class="tp-caption NotGeneric-Title tp-resizeme white-color rs-parallaxlevel-3"
@@ -138,7 +147,7 @@
                              data-responsive_offset="on"
                              data-elementdelay="0.05"
                              style="z-index: 5; white-space: nowrap;">
-                            Welcome to n. Agency
+                            @items.SliderText
                         </div>
 
                         <!-- LAYER NR. 2 -->
@@ -189,10 +198,15 @@
                         </div>
 
                     </li>
+                }
+
+
+                    @if (items.SliderId == 2)
+                {
 
                     <!-- slider Item 2 -->
                     <li data-index="rs-3" data-transition="slideremoveright" data-slotamount="default" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off">
-                        <img src="img/slider/s3.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                        <img src="@items.SliderImage" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 
                         <!-- LAYER NR. 1 -->
                         <div class="tp-caption NotGeneric-Title tp-resizeme black-color rs-parallaxlevel-3"
@@ -215,7 +229,7 @@
                              data-responsive_offset="on"
                              data-elementdelay="0.05"
                              style="z-index: 5; white-space: nowrap;">
-                            Creative & Digital
+                            @items.SliderText
                         </div>
 
                         <!-- LAYER NR. 2 -->
@@ -266,6 +280,10 @@
                         </div>
 
                     </li>
+                }
+
+                    @if (items.SliderId == 3)
+                {
 
                     <!-- slider Item 3 -->
                     <li data-index="rs-2" data-slotamount="default" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off">
@@ -343,7 +361,10 @@
                         </div>
 
                     </li>
+                }
 
+
+            }
                 </ul>
                 <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
             </div>
@@ -598,10 +619,10 @@
     </section>
     <!-- End Regular Section -->
     <!-- Start Video Section -->
-    <section class="video-bg overlay-dark" style="background-image:url(img/video-bg.jpg)">
-        <div class="js-height-full container">
+    <!--<section class="video-bg overlay-dark" style="background-image:url(img/video-bg.jpg)">
+        <div class="js-height-full container">-->
             <!-- video setting -->
-            <div class="video-player" data-property="{videoURL:'https://youtu.be/dwfjayxRvqw',containment:'.video-bg',autoPlay:true, mute:true, loop:true, showControls:false, startAt:0, opacity:1}"></div>
+            <!--<div class="video-player" data-property="{videoURL:'https://youtu.be/dwfjayxRvqw',containment:'.video-bg',autoPlay:true, mute:true, loop:true, showControls:false, startAt:0, opacity:1}"></div>
 
             <div class="vertical-section">
                 <div class="vertical-content">
@@ -613,7 +634,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
     <!-- End Video Section -->
     <!-- Start Team -->
     <section id="team" class="p-top-80 p-bottom-50">

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ExertSite.Models.Member>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberSmallText)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberRole)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberTwitter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberFacebook)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberLinkedin)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberSmallText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberRole)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberTwitter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberFacebook)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberLinkedin)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MemberId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MemberId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MemberId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,42 @@
+﻿@model ExertSite.Models.Testimonial
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Testimonial</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TestimonialPersonImage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TestimonialPersonImage)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TestimonialBgImage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TestimonialBgImage)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TestimonialText)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TestimonialText)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TestimonialPerson)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TestimonialPerson)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.TestimonialId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

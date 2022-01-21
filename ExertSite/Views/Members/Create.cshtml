@@ -1,0 +1,63 @@
+﻿@model ExertSite.Models.Member
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Member</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MemberSmallText" class="control-label"></label>
+                <input asp-for="MemberSmallText" class="form-control" />
+                <span asp-validation-for="MemberSmallText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MemberName" class="control-label"></label>
+                <input asp-for="MemberName" class="form-control" />
+                <span asp-validation-for="MemberName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MemberRole" class="control-label"></label>
+                <input asp-for="MemberRole" class="form-control" />
+                <span asp-validation-for="MemberRole" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MemberImage" class="control-label"></label>
+                <input asp-for="MemberImage" class="form-control" />
+                <span asp-validation-for="MemberImage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MemberTwitter" class="control-label"></label>
+                <input asp-for="MemberTwitter" class="form-control" />
+                <span asp-validation-for="MemberTwitter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MemberFacebook" class="control-label"></label>
+                <input asp-for="MemberFacebook" class="form-control" />
+                <span asp-validation-for="MemberFacebook" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MemberLinkedin" class="control-label"></label>
+                <input asp-for="MemberLinkedin" class="form-control" />
+                <span asp-validation-for="MemberLinkedin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

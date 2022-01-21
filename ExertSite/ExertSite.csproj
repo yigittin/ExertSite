@@ -34,10 +34,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Admin\" />
-    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\images\members\" />
+    <Folder Include="wwwroot\images\grows\" />
+    <Folder Include="wwwroot\images\testimonials\" />
+    <Folder Include="wwwroot\images\projects\" />
+    <Folder Include="wwwroot\images\sliders\" />
     <Folder Include="wwwroot\lib\bootstrap\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\css\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\js\" />

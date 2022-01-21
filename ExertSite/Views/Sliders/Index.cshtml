@@ -13,11 +13,17 @@
 <table class="table">
     <thead>
         <tr>
+
             <th>
                 @Html.DisplayNameFor(model => model.SliderImage)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.SliderText)
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SliderDesc)
+
             </th>
             <th></th>
         </tr>
@@ -25,11 +31,16 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+
             <td>
-                @Html.DisplayFor(modelItem => item.SliderImage)
+                <img src="@Url.Content(item.SliderImage)" class="d-flex w-25" asp-append-version="true" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SliderText)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SliderDesc)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.SliderId">Edit</a> |

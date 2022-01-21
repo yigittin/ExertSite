@@ -58,22 +58,21 @@ namespace ExertSite.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("SliderId,SliderImage,SliderText")] Slider slider)
+        public async Task<IActionResult> Create([Bind("SliderId,SliderImage,SliderText,SliderDesc")] Slider slider)
         {
             if (ModelState.IsValid)
             {
                 string webRootPath = _hostingEnvironment.WebRootPath;
                 var files = HttpContext.Request.Form.Files;
                 string fileName = Guid.NewGuid().ToString();
-                var uploads = Path.Combine(webRootPath, @"images\sliders\");
+                var uploads = Path.Combine(webRootPath, @"images/sliders");
                 var extension = Path.GetExtension(files[0].FileName);
 
                 using(var fileStream=new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
                 {
                     files[0].CopyTo(fileStream);
                 }
-                slider.SliderImage = @"\images\sliders\" + fileName + extension;
-
+                slider.SliderImage = @"/images/sliders/" + fileName + extension;
 
                 _context.Add(slider);
                 await _context.SaveChangesAsync();
@@ -103,7 +102,7 @@ namespace ExertSite.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("SliderId,SliderImage,SliderText")] Slider slider)
+        public async Task<IActionResult> Edit(int id, [Bind("SliderId,SliderImage,SliderText,SliderDesc")] Slider slider)
         {
             if (id != slider.SliderId)
             {

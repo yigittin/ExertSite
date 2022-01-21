@@ -12,5 +12,7 @@ namespace ExertSite.Models
         public string SliderImage { get; set; }
 
         public string SliderText { get; set; }
+
+        public string SliderDesc { get; set; }
     }
 }

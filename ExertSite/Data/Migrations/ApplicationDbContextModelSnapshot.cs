@@ -19,6 +19,51 @@ namespace ExertSite.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("ExertSite.Models.Contact", b =>
+                {
+                    b.Property<int>("ContactId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AddressText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactSmallText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EMail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ContactId");
+
+                    b.ToTable("Contact");
+                });
+
+            modelBuilder.Entity("ExertSite.Models.GrowText", b =>
+                {
+                    b.Property<int>("GrowTextId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("GrowtextImage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("GrowTextId");
+
+                    b.ToTable("GrowText");
+                });
+
             modelBuilder.Entity("ExertSite.Models.Member", b =>
                 {
                     b.Property<int>("MemberId")
@@ -26,13 +71,25 @@ namespace ExertSite.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("MemberFacebook")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("MemberImage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MemberLinkedin")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MemberName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MemberRole")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MemberSmallText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MemberTwitter")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("MemberId");
@@ -97,6 +154,9 @@ namespace ExertSite.Data.Migrations
                     b.Property<string>("ServiceName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ServiceText")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("ServiceId");
 
                     b.ToTable("Services");
@@ -108,6 +168,9 @@ namespace ExertSite.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("SliderDesc")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SliderImage")
                         .HasColumnType("nvarchar(max)");
