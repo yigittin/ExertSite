@@ -17,7 +17,7 @@ namespace ExertSite.Controllers
         private readonly ApplicationDbContext _context;
         private readonly IWebHostEnvironment _hostingEnvironment;
 
-        public GrowTextsController(ApplicationDbContext context,IWebHostEnvironment hostingEnvironment)
+        public GrowTextsController(ApplicationDbContext context, IWebHostEnvironment hostingEnvironment)
         {
             _context = context;
             _hostingEnvironment = hostingEnvironment;

@@ -31,7 +31,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ProjectImage)
+                <img src="@Url.Content(item.ProjectImage)" class="d-flex w-25" asp-append-version="true"/>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ProjectName)

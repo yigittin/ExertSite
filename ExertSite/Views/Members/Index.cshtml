@@ -49,7 +49,7 @@
                 @Html.DisplayFor(modelItem => item.MemberRole)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MemberImage)
+                <img src="@Url.Content(item.MemberImage)" class="d-flex w-50" asp-append-version="true" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.MemberTwitter)

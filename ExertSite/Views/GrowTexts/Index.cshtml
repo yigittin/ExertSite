@@ -13,6 +13,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.GrowtextImage)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Text)
             </th>
             <th></th>
@@ -21,6 +24,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                <img src="@Url.Content(item.GrowtextImage)" class="d-flex w-25" asp-append-version="true" />
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Text)
             </td>
