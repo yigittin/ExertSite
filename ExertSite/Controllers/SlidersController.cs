@@ -90,6 +90,8 @@ namespace ExertSite.Controllers
             }
 
             var slider = await _context.Sliders.FindAsync(id);
+            
+
             if (slider == null)
             {
                 return NotFound();
@@ -108,13 +110,34 @@ namespace ExertSite.Controllers
             {
                 return NotFound();
             }
-
+         
             if (ModelState.IsValid)
             {
                 try
                 {
+                   
+                    var model = _context.Sliders.Where(x => x.SliderId == id);
+                    string oldLink = "";
+                    foreach (var items in model)
+                    {
+                        oldLink = Path.Combine(_hostingEnvironment.WebRootPath, items.SliderImage);
+                    }
+                    
+                    
+                    string webRootPath = _hostingEnvironment.WebRootPath;
+                    var files = HttpContext.Request.Form.Files;
+                    string fileName = Guid.NewGuid().ToString();
+                    var uploads = Path.Combine(webRootPath, @"images/sliders");
+                    var extension = Path.GetExtension(files[0].FileName);
+
+                    using (var fileStream = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                    {
+                        files[0].CopyTo(fileStream);
+                    }
+                    slider.SliderImage = @"/images/sliders/" + fileName + extension;
                     _context.Update(slider);
                     await _context.SaveChangesAsync();
+                    System.IO.File.Delete(oldLink);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -156,6 +179,8 @@ namespace ExertSite.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var slider = await _context.Sliders.FindAsync(id);
+            var picLink = slider.SliderImage;
+            System.IO.File.Delete(picLink);
             _context.Sliders.Remove(slider);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

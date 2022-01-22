@@ -28,6 +28,7 @@ namespace ExertSite.Controllers
             viewModel.Portfolios = _context.Portfolios;
             viewModel.Services = _context.Services;
             viewModel.Projects = _context.Projects;
+            viewModel.GrowTexts = _context.GrowText;
 
             
             

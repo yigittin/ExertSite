@@ -12,99 +12,99 @@ using System.IO;
 
 namespace ExertSite.Controllers
 {
-    public class GrowTextsController : Controller
+    public class ClientsController : Controller
     {
         private readonly ApplicationDbContext _context;
         private readonly IWebHostEnvironment _hostingEnvironment;
 
-        public GrowTextsController(ApplicationDbContext context,IWebHostEnvironment hostEnvironment)
+        public ClientsController(ApplicationDbContext context,IWebHostEnvironment hostEnvironment)
         {
             _context = context;
             _hostingEnvironment = hostEnvironment;
         }
 
-        // GET: GrowTexts
+        // GET: Clients
         public async Task<IActionResult> Index()
         {
-            return View(await _context.GrowText.ToListAsync());
+            return View(await _context.Client.ToListAsync());
         }
 
-        // GET: GrowTexts/Details/5
-        public async Task<IActionResult> Details(int? id)
+        // GET: Clients/Details/5
+        public async Task<IActionResult> Details(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var growText = await _context.GrowText
-                .FirstOrDefaultAsync(m => m.GrowTextId == id);
-            if (growText == null)
+            var client = await _context.Client
+                .FirstOrDefaultAsync(m => m.ClientId == id);
+            if (client == null)
             {
                 return NotFound();
             }
 
-            return View(growText);
+            return View(client);
         }
 
-        // GET: GrowTexts/Create
+        // GET: Clients/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: GrowTexts/Create
+        // POST: Clients/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("GrowTextId,GrowtextImage,GrowHeader,Text")] GrowText growText)
+        public async Task<IActionResult> Create([Bind("ClientId,ClientImage")] Client client)
         {
             if (ModelState.IsValid)
             {
                 string webRootPath = _hostingEnvironment.WebRootPath;
                 var files = HttpContext.Request.Form.Files;
                 string fileName = Guid.NewGuid().ToString();
-                var uploads = Path.Combine(webRootPath, @"images/grows");
+                var uploads = Path.Combine(webRootPath, @"images/clients");
                 var extension = Path.GetExtension(files[0].FileName);
 
-                using (var fileStream = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                using(var fileStream=new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
                 {
                     files[0].CopyTo(fileStream);
                 }
-                growText.GrowtextImage = @"/images/grows/" + fileName + extension;
+                client.ClientImage = "@/images/clients" + fileName + extension;
 
-                _context.Add(growText);
+                _context.Add(client);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(growText);
+            return View(client);
         }
 
-        // GET: GrowTexts/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        // GET: Clients/Edit/5
+        public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var growText = await _context.GrowText.FindAsync(id);
-            if (growText == null)
+            var client = await _context.Client.FindAsync(id);
+            if (client == null)
             {
                 return NotFound();
             }
-            return View(growText);
+            return View(client);
         }
 
-        // POST: GrowTexts/Edit/5
+        // POST: Clients/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("GrowTextId,GrowtextImage,GrowHeader,Text")] GrowText growText)
+        public async Task<IActionResult> Edit(string id, [Bind("ClientId,ClientImage")] Client client)
         {
-            if (id != growText.GrowTextId)
+            if (id != client.ClientId)
             {
                 return NotFound();
             }
@@ -113,12 +113,12 @@ namespace ExertSite.Controllers
             {
                 try
                 {
-                    _context.Update(growText);
+                    _context.Update(client);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!GrowTextExists(growText.GrowTextId))
+                    if (!ClientExists(client.ClientId))
                     {
                         return NotFound();
                     }
@@ -129,41 +129,41 @@ namespace ExertSite.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(growText);
+            return View(client);
         }
 
-        // GET: GrowTexts/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        // GET: Clients/Delete/5
+        public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var growText = await _context.GrowText
-                .FirstOrDefaultAsync(m => m.GrowTextId == id);
-            if (growText == null)
+            var client = await _context.Client
+                .FirstOrDefaultAsync(m => m.ClientId == id);
+            if (client == null)
             {
                 return NotFound();
             }
 
-            return View(growText);
+            return View(client);
         }
 
-        // POST: GrowTexts/Delete/5
+        // POST: Clients/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var growText = await _context.GrowText.FindAsync(id);
-            _context.GrowText.Remove(growText);
+            var client = await _context.Client.FindAsync(id);
+            _context.Client.Remove(client);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool GrowTextExists(int id)
+        private bool ClientExists(string id)
         {
-            return _context.GrowText.Any(e => e.GrowTextId == id);
+            return _context.Client.Any(e => e.ClientId == id);
         }
     }
 }

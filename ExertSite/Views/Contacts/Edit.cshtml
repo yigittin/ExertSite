@@ -5,6 +5,7 @@
     Layout = "/Views/Shared/_Admin.cshtml";
 
 }
+<script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
 
 <h1>Edit</h1>
 
@@ -17,12 +18,12 @@
             <input type="hidden" asp-for="ContactId" />
             <div class="form-group">
                 <label asp-for="ContactText" class="control-label"></label>
-                <input asp-for="ContactText" class="form-control" />
+                <textarea asp-for="ContactText" class="form-control" id="conText">Metin</textarea>
                 <span asp-validation-for="ContactText" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="AddressText" class="control-label"></label>
-                <input asp-for="AddressText" class="form-control" />
+                <textarea asp-for="AddressText" class="form-control" id="adress">Metin</textarea>
                 <span asp-validation-for="AddressText" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -37,7 +38,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="ContactSmallText" class="control-label"></label>
-                <input asp-for="ContactSmallText" class="form-control" />
+                <textarea asp-for="ContactSmallText" class="form-control" id="smallText">Metin</textarea>
                 <span asp-validation-for="ContactSmallText" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -50,6 +51,37 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
+<script>
+    ClassicEditor
+        .create(document.querySelector('#adress'))
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#smallText'))
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#conText'))
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

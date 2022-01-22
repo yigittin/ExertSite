@@ -11,6 +11,8 @@ namespace ExertSite.Models
 
         public string GrowtextImage { get; set; }
 
+        public string GrowHeader { get; set; }
+
         public string Text { get; set; }
     }
 }
