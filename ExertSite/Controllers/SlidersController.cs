@@ -17,7 +17,7 @@ namespace ExertSite.Controllers
         private readonly ApplicationDbContext _context;
         private readonly IWebHostEnvironment _hostingEnvironment;
 
-        public SlidersController(ApplicationDbContext context,IWebHostEnvironment hostEnvironment)
+        public SlidersController(ApplicationDbContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
             _hostingEnvironment = hostEnvironment;
@@ -65,14 +65,14 @@ namespace ExertSite.Controllers
                 string webRootPath = _hostingEnvironment.WebRootPath;
                 var files = HttpContext.Request.Form.Files;
                 string fileName = Guid.NewGuid().ToString();
-                var uploads = Path.Combine(webRootPath, @"images/sliders");
+                var uploads = Path.Combine(webRootPath, SiteOperations.SliderFolder);
                 var extension = Path.GetExtension(files[0].FileName);
 
-                using(var fileStream=new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                using (var fileStream = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
                 {
                     files[0].CopyTo(fileStream);
                 }
-                slider.SliderImage = @"/images/sliders/" + fileName + extension;
+                slider.SliderImage =@"/"+ fileName + extension;
 
                 _context.Add(slider);
                 await _context.SaveChangesAsync();
@@ -90,7 +90,7 @@ namespace ExertSite.Controllers
             }
 
             var slider = await _context.Sliders.FindAsync(id);
-            
+
 
             if (slider == null)
             {
@@ -110,34 +110,43 @@ namespace ExertSite.Controllers
             {
                 return NotFound();
             }
-         
+
             if (ModelState.IsValid)
             {
                 try
                 {
-                   
-                    var model = _context.Sliders.Where(x => x.SliderId == id);
-                    string oldLink = "";
-                    foreach (var items in model)
-                    {
-                        oldLink = Path.Combine(_hostingEnvironment.WebRootPath, items.SliderImage);
-                    }
-                    
-                    
-                    string webRootPath = _hostingEnvironment.WebRootPath;
-                    var files = HttpContext.Request.Form.Files;
-                    string fileName = Guid.NewGuid().ToString();
-                    var uploads = Path.Combine(webRootPath, @"images/sliders");
-                    var extension = Path.GetExtension(files[0].FileName);
 
-                    using (var fileStream = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                    string webRootPath = _hostingEnvironment.WebRootPath;
+
+                    string oldLink = "";
+                    var dbImage = _context.Sliders.FirstOrDefault(x => x.SliderId == slider.SliderId);
+                    oldLink = Path.Combine(webRootPath, dbImage.SliderImage.ToString());
+
+
+
+
+                    var files = HttpContext.Request.Form.Files;
+                    if (files.Count > 0)
                     {
-                        files[0].CopyTo(fileStream);
+
+                        string fileName = Guid.NewGuid().ToString();
+                        var uploads = Path.Combine(webRootPath,SiteOperations.SliderFolder);
+                        var extension = Path.GetExtension(files[0].FileName);
+
+                        using (var fileStream = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                        {
+                            files[0].CopyTo(fileStream);
+                        }
+                        dbImage.SliderImage =  fileName + extension;
+                        if (System.IO.File.Exists(oldLink))
+                        {
+                            System.IO.File.Delete(oldLink);
+                        }
                     }
-                    slider.SliderImage = @"/images/sliders/" + fileName + extension;
-                    _context.Update(slider);
+                  
+                    
                     await _context.SaveChangesAsync();
-                    System.IO.File.Delete(oldLink);
+
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -178,9 +187,7 @@ namespace ExertSite.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var slider = await _context.Sliders.FindAsync(id);
-            var picLink = slider.SliderImage;
-            System.IO.File.Delete(picLink);
+            var slider = await _context.Sliders.FindAsync(id);            
             _context.Sliders.Remove(slider);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

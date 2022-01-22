@@ -65,14 +65,14 @@ namespace ExertSite.Controllers
                 string webRootPath = _hostingEnvironment.WebRootPath;
                 var files = HttpContext.Request.Form.Files;
                 string fileName = Guid.NewGuid().ToString();
-                var uploads = Path.Combine(webRootPath, @"images/grows");
+                var uploads = Path.Combine(webRootPath, SiteOperations.GrowFolder);
                 var extension = Path.GetExtension(files[0].FileName);
 
                 using (var fileStream = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
                 {
                     files[0].CopyTo(fileStream);
                 }
-                growText.GrowtextImage = @"/images/grows/" + fileName + extension;
+                growText.GrowtextImage = @"/" + fileName + extension;
 
                 _context.Add(growText);
                 await _context.SaveChangesAsync();
@@ -113,6 +113,31 @@ namespace ExertSite.Controllers
             {
                 try
                 {
+                    var dbImage = _context.GrowText.FirstOrDefault(x => x.GrowTextId == growText.GrowTextId);
+                    string webRootPath = _hostingEnvironment.WebRootPath;
+                    string oldLink = "";
+                    oldLink = Path.Combine(webRootPath, dbImage.GrowtextImage.ToString());
+
+                    var files = HttpContext.Request.Form.Files;
+                    if (files.Count > 0)
+                    {
+                        string fileName = Guid.NewGuid().ToString();
+                        var uploads = Path.Combine(webRootPath, SiteOperations.GrowFolder);
+                        var extension = Path.GetExtension(files[0].FileName);
+
+                        using(var fileStream=new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                        {
+                            files[0].CopyTo(fileStream);
+                        }
+                        dbImage.GrowtextImage = fileName + extension;
+
+                        if (System.IO.File.Exists(oldLink))
+                        {
+                            System.IO.File.Delete(oldLink);
+                        }
+                    }
+
+
                     _context.Update(growText);
                     await _context.SaveChangesAsync();
                 }

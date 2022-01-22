@@ -68,14 +68,14 @@ namespace ExertSite.Controllers
                 string webRootPath = _hostingEnvironment.WebRootPath;
                 var files = HttpContext.Request.Form.Files;
                 string fileName = Guid.NewGuid().ToString();
-                var uploads = Path.Combine(webRootPath, @"images/projects");
+                var uploads = Path.Combine(webRootPath, SiteOperations.ProjectsFolder);
                 var extension = Path.GetExtension(files[0].FileName);
 
                 using(var fileStream=new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
                 {
                     files[0].CopyTo(fileStream);
                 }
-                project.ProjectImage = @"/images/projects/" + fileName + extension;
+                project.ProjectImage = @"/" + fileName + extension;
 
 
                 _context.Add(project);
