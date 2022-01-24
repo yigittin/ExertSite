@@ -3,15 +3,16 @@
 @{
     ViewData["Title"] = "Edit";
     Layout = "/Views/Shared/_Admin.cshtml";
+    ViewData["pageTitle"] = "Services";
 
 }
 <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
 
 <h1>Edit</h1>
 
-<h4>Service</h4>
-<hr />
 <div class="row">
+    <div class="card container-fluid">
+
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -32,6 +33,7 @@
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
+    </div>
     </div>
 </div>
 

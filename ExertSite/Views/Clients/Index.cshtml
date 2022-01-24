@@ -1,16 +1,16 @@
-﻿@model IEnumerable<ExertSite.Models.Client>
+﻿@model IEnumerable<ExertSite.Models.Clients>
 
 @{
     ViewData["Title"] = "Index";
     Layout = "/Views/Shared/_Admin.cshtml";
-
+    ViewData["pageTitle"] = "Clients";
 }
-
-<h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+<div class="container-fluid card">
+
 <table class="table">
     <thead>
         <tr>
@@ -24,14 +24,16 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ClientImage)
+                <img src="@Url.Content(SiteOperations.ClientFolder+item.ClientImage)" class="d-flex w-25" asp-append-version="true" />
+
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ClientId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ClientId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ClientId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.ClientsId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ClientsId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ClientsId">Delete</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+</div>

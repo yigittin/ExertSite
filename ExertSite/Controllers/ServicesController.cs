@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ExertSite.Data;
 using ExertSite.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ExertSite.Controllers
 {
+    [Authorize]
+
     public class ServicesController : Controller
     {
         private readonly ApplicationDbContext _context;

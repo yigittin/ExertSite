@@ -9,9 +9,12 @@ using ExertSite.Data;
 using ExertSite.Models;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ExertSite.Controllers
 {
+    [Authorize]
+
     public class GrowTextsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -116,7 +119,7 @@ namespace ExertSite.Controllers
                     var dbImage = _context.GrowText.FirstOrDefault(x => x.GrowTextId == growText.GrowTextId);
                     string webRootPath = _hostingEnvironment.WebRootPath;
                     string oldLink = "";
-                    oldLink = Path.Combine(webRootPath, dbImage.GrowtextImage.ToString());
+                    oldLink =webRootPath+@"/"+SiteOperations.GrowFolder+@"/"+dbImage.GrowtextImage.ToString();
 
                     var files = HttpContext.Request.Form.Files;
                     if (files.Count > 0)
@@ -180,7 +183,15 @@ namespace ExertSite.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            var webRootPath = _hostingEnvironment.WebRootPath;
             var growText = await _context.GrowText.FindAsync(id);
+            string oldLink = "";
+            oldLink = webRootPath + "@/" + SiteOperations.GrowFolder + @"/" + growText.GrowtextImage.ToString();
+            if (System.IO.File.Exists(oldLink))
+            {
+                System.IO.File.Delete(oldLink);
+            }
+
             _context.GrowText.Remove(growText);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

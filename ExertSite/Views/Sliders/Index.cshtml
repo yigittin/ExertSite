@@ -3,13 +3,15 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "/Views/Shared/_Admin.cshtml";
-}
+    ViewData["pageTitle"] = "Sliders";
 
-<h1>Index</h1>
+}
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+<div class="card container-fluid">
+
 <table class="table">
     <thead>
         <tr>
@@ -25,6 +27,10 @@
                 @Html.DisplayNameFor(model => model.SliderDesc)
 
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SliderPosition)
+
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -33,7 +39,7 @@
         <tr>
 
             <td>
-                <img src="@Url.Content(item.SliderImage)" class="d-flex w-25" asp-append-version="true" />
+                <img src="@Url.Content(SiteOperations.SliderFolder+item.SliderImage)" class="d-flex w-25" asp-append-version="true" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SliderText)
@@ -41,6 +47,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SliderDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SliderPosition)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.SliderId">Edit</a> |
@@ -51,3 +60,4 @@
 }
     </tbody>
 </table>
+</div>

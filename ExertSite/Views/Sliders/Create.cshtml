@@ -3,38 +3,50 @@
 @{
     ViewData["Title"] = "Create";
     Layout = "/Views/Shared/_Admin.cshtml";
+    ViewData["pageTitle"] = "Sliders";
+
 }
 <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
 
 <h1>Create</h1>
 
-<h4>Slider</h4>
-<hr />
+
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="SliderImage" class="control-label"></label>
-                <input type="file" asp-for="SliderImage" class="form-control" name="files" />
-                <span asp-validation-for="SliderImage" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SliderText" class="control-label"></label>
-                <textarea asp-for="SliderText" class="ckeditor" id="header">Metin</textarea>
-                <span asp-validation-for="SliderText" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SliderDesc" class="control-label"></label>
-                <textarea asp-for="SliderDesc" class="form-control" id="desc">Metin</textarea>
-                <span asp-validation-for="SliderDesc" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+    <div class="card container-fluid">
+
+        <div class="col-md-4">
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="SliderImage" class="control-label"></label>
+                    <input type="file" asp-for="SliderImage" class="form-control" name="files" />
+                    <span asp-validation-for="SliderImage" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SliderText" class="control-label"></label>
+                    <textarea asp-for="SliderText" class="ckeditor" id="header">Metin</textarea>
+                    <span asp-validation-for="SliderText" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SliderDesc" class="control-label"></label>
+                    <textarea asp-for="SliderDesc" class="form-control" id="desc">Metin</textarea>
+                    <span asp-validation-for="SliderDesc" class="text-danger"></span>
+                </div>
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <label asp-for="SliderPosition" class="control-label"></label>
+                        <input asp-for="SliderPosition" class="form-control" />
+                        <span asp-validation-for="SliderPosition" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
 </div>
+
 
 <div>
     <a asp-action="Index">Back to List</a>

@@ -24,7 +24,7 @@ namespace ExertSite.Controllers
         public IActionResult Index()
         {
             Container viewModel = new Container();
-            viewModel.Sliders = _context.Sliders;
+            viewModel.Sliders = _context.Sliders.OrderBy(x=>x.SliderPosition);
             viewModel.Portfolios = _context.Portfolios;
             viewModel.Services = _context.Services;
             viewModel.Projects = _context.Projects;

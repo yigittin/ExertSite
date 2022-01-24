@@ -1,16 +1,17 @@
-﻿@model ExertSite.Models.Client
+﻿@model ExertSite.Models.Clients
 
 @{
     ViewData["Title"] = "Details";
     Layout = "/Views/Shared/_Admin.cshtml";
+    ViewData["pageTitle"] = "Clients";
 
 }
 
 <h1>Details</h1>
 
 <div>
-    <h4>Client</h4>
-    <hr />
+    
+   
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ClientImage)
@@ -21,6 +22,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ClientId">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.ClientsId">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

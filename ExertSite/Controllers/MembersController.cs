@@ -9,9 +9,12 @@ using ExertSite.Data;
 using ExertSite.Models;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ExertSite.Controllers
 {
+    [Authorize]
+
     public class MembersController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -59,7 +62,7 @@ namespace ExertSite.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MemberId,MemberSmallText,MemberName,MemberRole,MemberImage,MemberTwitter,MemberFacebook,MemberLinkedin")] Member member)
+        public async Task<IActionResult> Create(Member member)
         {
             if (ModelState.IsValid)
             {
@@ -103,7 +106,7 @@ namespace ExertSite.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MemberId,MemberSmallText,MemberName,MemberRole,MemberImage,MemberTwitter,MemberFacebook,MemberLinkedin")] Member member)
+        public async Task<IActionResult> Edit(int id,  Member member)
         {
             if (id != member.MemberId)
             {
@@ -114,7 +117,37 @@ namespace ExertSite.Controllers
             {
                 try
                 {
-                    _context.Update(member);
+                    string webRootPath = _hostingEnvironment.WebRootPath;
+                    string oldLink = "";
+                    var dbImage = _context.Members.FirstOrDefault(x => x.MemberId == member.MemberId);
+                    oldLink = webRootPath + @"/" + SiteOperations.MemberFolder + @"/" + dbImage.MemberImage.ToString();
+
+
+                    var files = HttpContext.Request.Form.Files;
+                    if (files.Count > 0)
+                    {
+
+                        string fileName = Guid.NewGuid().ToString();
+                        var uploads = Path.Combine(webRootPath, SiteOperations.MemberFolder);
+                        var extension = Path.GetExtension(files[0].FileName);
+
+                        using (var fileStream = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                        {
+                            files[0].CopyTo(fileStream);
+                        }
+                        dbImage.MemberImage = @"/" + fileName + extension;
+                        if (System.IO.File.Exists(oldLink))
+                        {
+                            System.IO.File.Delete(oldLink);
+                        }
+                    }
+                    dbImage.MemberFacebook = member.MemberFacebook;
+                    dbImage.MemberLinkedin = member.MemberLinkedin;
+                    dbImage.MemberRole = member.MemberRole;
+                    dbImage.MemberTwitter = member.MemberTwitter;
+                    dbImage.MemberName = member.MemberName;
+                    dbImage.MemberSmallText = member.MemberSmallText;
+                    
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -156,9 +189,19 @@ namespace ExertSite.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            var webRootPath = _hostingEnvironment.WebRootPath;
+            string oldLink = "";
+            
+
             var member = await _context.Members.FindAsync(id);
+            oldLink = webRootPath + @"/" + SiteOperations.GrowFolder + @"/" + member.MemberImage.ToString();
             _context.Members.Remove(member);
             await _context.SaveChangesAsync();
+
+            if (System.IO.File.Exists(oldLink))
+            {
+                System.IO.File.Delete(oldLink);
+            }
             return RedirectToAction(nameof(Index));
         }
 

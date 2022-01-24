@@ -34,10 +34,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Data\Migrations\" />
     <Folder Include="Views\Admin\" />
+    <Folder Include="wwwroot\images\clients\" />
     <Folder Include="wwwroot\images\members\" />
     <Folder Include="wwwroot\images\grows\" />
-    <Folder Include="wwwroot\images\clients\" />
     <Folder Include="wwwroot\images\testimonials\" />
     <Folder Include="wwwroot\images\projects\" />
     <Folder Include="wwwroot\images\sliders\" />

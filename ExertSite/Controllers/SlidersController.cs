@@ -9,9 +9,11 @@ using ExertSite.Data;
 using ExertSite.Models;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ExertSite.Controllers
 {
+    [Authorize]
     public class SlidersController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -58,7 +60,7 @@ namespace ExertSite.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("SliderId,SliderImage,SliderText,SliderDesc")] Slider slider)
+        public async Task<IActionResult> Create(Slider slider)
         {
             if (ModelState.IsValid)
             {
@@ -104,7 +106,7 @@ namespace ExertSite.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("SliderId,SliderImage,SliderText,SliderDesc")] Slider slider)
+        public async Task<IActionResult> Edit(int id, Slider slider)
         {
             if (id != slider.SliderId)
             {
@@ -120,10 +122,11 @@ namespace ExertSite.Controllers
 
                     string oldLink = "";
                     var dbImage = _context.Sliders.FirstOrDefault(x => x.SliderId == slider.SliderId);
-                    oldLink = Path.Combine(webRootPath, dbImage.SliderImage.ToString());
+                   
 
-
-
+                    oldLink = webRootPath+@"/"+SiteOperations.SliderFolder+@"/"+dbImage.SliderImage.ToString();
+                    
+                    
 
                     var files = HttpContext.Request.Form.Files;
                     if (files.Count > 0)
@@ -137,14 +140,17 @@ namespace ExertSite.Controllers
                         {
                             files[0].CopyTo(fileStream);
                         }
-                        dbImage.SliderImage =  fileName + extension;
+                        dbImage.SliderImage = @"/"+ fileName + extension;
                         if (System.IO.File.Exists(oldLink))
                         {
                             System.IO.File.Delete(oldLink);
                         }
                     }
-                  
-                    
+
+                    dbImage.SliderDesc = slider.SliderDesc;
+                    dbImage.SliderPosition = slider.SliderPosition;
+                    dbImage.SliderText = slider.SliderText;
+                   
                     await _context.SaveChangesAsync();
 
                 }

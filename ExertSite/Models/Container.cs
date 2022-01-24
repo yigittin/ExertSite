@@ -15,6 +15,10 @@ namespace ExertSite.Models
         public IEnumerable<ExertSite.Models.Service> Services { get; set; }
         public IEnumerable<ExertSite.Models.GrowText> GrowTexts { get; set; }
 
+        public IEnumerable<ExertSite.Models.Clients> Clients { get; set; }
+
+        public IEnumerable<ExertSite.Models.Member> Members { get; set; }
+
         public IEnumerable<ExertSite.Models.SiteOperations> SiteOperations { get; set; }
 
     }

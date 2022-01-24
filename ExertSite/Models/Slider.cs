@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 
 namespace ExertSite.Models
 {
+
+    
     public class Slider
     {
         public int SliderId { get; set; }
@@ -14,5 +16,7 @@ namespace ExertSite.Models
         public string SliderText { get; set; }
 
         public string SliderDesc { get; set; }
+
+        public int SliderPosition { get; set; }
     }
 }

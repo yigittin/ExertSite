@@ -9,9 +9,12 @@ using ExertSite.Data;
 using ExertSite.Models;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ExertSite.Controllers
 {
+    [Authorize]
+
     public class ProjectsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -119,6 +122,17 @@ namespace ExertSite.Controllers
             {
                 try
                 {
+                    var dbImage = _context.Projects.FirstOrDefault(x => x.ProjectId == project.ProjectId);
+                    string webRootPath = _hostingEnvironment.WebRootPath;
+                    string oldLink = "";
+                    oldLink = webRootPath + @"/" + SiteOperations.ProjectsFolder + @"/" + dbImage.ProjectImage.ToString();
+
+                    var files = HttpContext.Request.Form.Files;
+                    if (files.Count > 0)
+                    {
+
+                    }
+
                     _context.Update(project);
                     await _context.SaveChangesAsync();
                 }

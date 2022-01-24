@@ -24,7 +24,7 @@ namespace ExertSite.Data
         public DbSet<ExertSite.Models.Contact> Contact { get; set; }
         public DbSet<ExertSite.Models.GrowText> GrowText { get; set; }
         public DbSet<Choose> Choose { get; set; }
-        public DbSet<ExertSite.Models.Client> Client { get; set; }
+        public DbSet<ExertSite.Models.Clients> Client { get; set; }
 
 
     }
