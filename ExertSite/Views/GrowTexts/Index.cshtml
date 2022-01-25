@@ -30,7 +30,8 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.GrowtextImage)
+                <img src="@Url.Content(SiteOperations.GrowFolder+item.GrowtextImage)" class="d-flex w-25" asp-append-version="true" />
+
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.GrowHeader)

@@ -29,7 +29,7 @@ namespace ExertSite.Controllers
             viewModel.Services = _context.Services;
             viewModel.Projects = _context.Projects;
             viewModel.GrowTexts = _context.GrowText;
-
+            viewModel.Clients = _context.Client;
             
             
             return View(viewModel);

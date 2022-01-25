@@ -38,7 +38,7 @@
             {
                 <tr>
                     <td>
-                        <img src="@Url.Content(item.ProjectImage)" class="d-flex w-25" asp-append-version="true" />
+                        <img src="@Url.Content(SiteOperations.ProjectsFolder+item.ProjectImage)" class="d-flex w-25" asp-append-version="true" />
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.ProjectName)

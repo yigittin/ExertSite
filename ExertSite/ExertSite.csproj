@@ -6,7 +6,110 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\css\adminlte.min.css.map" />
+    <None Include="wwwroot\css\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\css\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\css\navbar\style.css.map" />
+    <None Include="wwwroot\css\style.css.map" />
+    <None Include="wwwroot\inc\owlcarousel\js\owl.carousel.min.js" />
+    <None Include="wwwroot\inc\revolution\.DS_Store" />
+    <None Include="wwwroot\inc\revolution\assets\.DS_Store" />
+    <None Include="wwwroot\inc\revolution\css\.DS_Store" />
+    <None Include="wwwroot\inc\revolution\css\closedhand.cur" />
+    <None Include="wwwroot\inc\revolution\css\index.php" />
+    <None Include="wwwroot\inc\revolution\css\openhand.cur" />
+    <None Include="wwwroot\inc\revolution\fonts\.DS_Store" />
+    <None Include="wwwroot\inc\revolution\fonts\index.php" />
+    <None Include="wwwroot\inc\revolution\fonts\revicons\index.php" />
+    <None Include="wwwroot\inc\revolution\fonts\revicons\revicons.svg" />
+    <None Include="wwwroot\inc\revolution\index.php" />
+    <None Include="wwwroot\inc\revolution\info.cfg" />
+    <None Include="wwwroot\inc\revolution\js\extensions\index.php" />
+    <None Include="wwwroot\inc\revolution\js\extensions\revolution.extension.actions.min.js" />
+    <None Include="wwwroot\inc\revolution\js\extensions\revolution.extension.carousel.min.js" />
+    <None Include="wwwroot\inc\revolution\js\extensions\revolution.extension.kenburn.min.js" />
+    <None Include="wwwroot\inc\revolution\js\extensions\revolution.extension.layeranimation.min.js" />
+    <None Include="wwwroot\inc\revolution\js\extensions\revolution.extension.migration.min.js" />
+    <None Include="wwwroot\inc\revolution\js\extensions\revolution.extension.navigation.min.js" />
+    <None Include="wwwroot\inc\revolution\js\extensions\revolution.extension.parallax.min.js" />
+    <None Include="wwwroot\inc\revolution\js\extensions\revolution.extension.slideanims.min.js" />
+    <None Include="wwwroot\inc\revolution\js\extensions\revolution.extension.video.min.js" />
+    <None Include="wwwroot\inc\revolution\js\extensions\source\index.php" />
+    <None Include="wwwroot\inc\revolution\js\extensions\source\revolution.extension.actions.js" />
+    <None Include="wwwroot\inc\revolution\js\extensions\source\revolution.extension.carousel.js" />
+    <None Include="wwwroot\inc\revolution\js\extensions\source\revolution.extension.kenburn.js" />
+    <None Include="wwwroot\inc\revolution\js\extensions\source\revolution.extension.layeranimation.js" />
+    <None Include="wwwroot\inc\revolution\js\extensions\source\revolution.extension.migration.js" />
+    <None Include="wwwroot\inc\revolution\js\extensions\source\revolution.extension.navigation.js" />
+    <None Include="wwwroot\inc\revolution\js\extensions\source\revolution.extension.parallax.js" />
+    <None Include="wwwroot\inc\revolution\js\extensions\source\revolution.extension.slideanims.js" />
+    <None Include="wwwroot\inc\revolution\js\extensions\source\revolution.extension.video.js" />
+    <None Include="wwwroot\inc\revolution\js\index.php" />
+    <None Include="wwwroot\inc\revolution\js\jquery.themepunch.enablelog.js" />
+    <None Include="wwwroot\inc\revolution\js\jquery.themepunch.revolution.min.js" />
+    <None Include="wwwroot\inc\revolution\js\jquery.themepunch.tools.min.js" />
+    <None Include="wwwroot\inc\revolution\js\source\index.php" />
+    <None Include="wwwroot\inc\revolution\js\source\jquery.themepunch.enablelog.js" />
+    <None Include="wwwroot\inc\revolution\js\source\jquery.themepunch.revolution.js" />
+    <None Include="wwwroot\inc\revolution\js\source\jquery.themepunch.tools.min.js" />
+    <None Include="wwwroot\inc\revolution\php\.DS_Store" />
+    <None Include="wwwroot\inc\revolution\php\facebook\class-facebook.php" />
+    <None Include="wwwroot\inc\revolution\php\flickr\class-flickr.php" />
+    <None Include="wwwroot\inc\revolution\php\instagram\class-instagram.php" />
+    <None Include="wwwroot\inc\revolution\php\twitter\.DS_Store" />
+    <None Include="wwwroot\inc\revolution\php\twitter\class-twitter.php" />
+    <None Include="wwwroot\inc\revolution\php\twitter\connection\Application.php" />
+    <None Include="wwwroot\inc\revolution\php\twitter\connection\ConnectionAbstract.php" />
+    <None Include="wwwroot\inc\revolution\php\twitter\connection\User.php" />
+    <None Include="wwwroot\inc\revolution\php\twitter\RestApi.php" />
+    <None Include="wwwroot\inc\revolution\php\vimeo\class-vimeo.php" />
+    <None Include="wwwroot\inc\revolution\php\youtube\class-youtube.php" />
+    <None Include="wwwroot\js\adminlte.min.js" />
+    <None Include="wwwroot\js\adminlte.min.js.map" />
+    <None Include="wwwroot\js\contact.js" />
+    <None Include="wwwroot\js\custom.js" />
+    <None Include="wwwroot\js\imagesloaded.pkgd.min.js" />
+    <None Include="wwwroot\js\isotope.pkgd.min.js" />
+    <None Include="wwwroot\js\jquery.appear.js" />
+    <None Include="wwwroot\js\jquery.countTo.js" />
+    <None Include="wwwroot\js\jquery.easing.1.3.js" />
+    <None Include="wwwroot\js\jquery.magnific-popup.min.js" />
+    <None Include="wwwroot\js\jquery.mb.YTPlayer.js" />
+    <None Include="wwwroot\js\jquery.min.js" />
+    <None Include="wwwroot\js\jquery.stellar.min.js" />
+    <None Include="wwwroot\js\less.min.js" />
+    <None Include="wwwroot\js\owl.carousel.js" />
+    <None Include="wwwroot\js\prepros-6.config" />
+    <None Include="wwwroot\js\retina.min.js" />
     <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\js\smooth-scroll.js" />
+    <None Include="wwwroot\js\wow.min.js" />
+    <None Include="wwwroot\less\base\vars.less" />
+    <None Include="wwwroot\less\custom.less" />
+    <None Include="wwwroot\less\elements\accordion.less" />
+    <None Include="wwwroot\less\elements\blog.less" />
+    <None Include="wwwroot\less\elements\client.less" />
+    <None Include="wwwroot\less\elements\contact.less" />
+    <None Include="wwwroot\less\elements\footer.less" />
+    <None Include="wwwroot\less\elements\intro.less" />
+    <None Include="wwwroot\less\elements\nav.less" />
+    <None Include="wwwroot\less\elements\owl-carousel.less" />
+    <None Include="wwwroot\less\elements\portfolio.less" />
+    <None Include="wwwroot\less\elements\price.less" />
+    <None Include="wwwroot\less\elements\progress.less" />
+    <None Include="wwwroot\less\elements\services.less" />
+    <None Include="wwwroot\less\elements\stat.less" />
+    <None Include="wwwroot\less\elements\tabs.less" />
+    <None Include="wwwroot\less\elements\team.less" />
+    <None Include="wwwroot\less\elements\testimonial.less" />
+    <None Include="wwwroot\less\elements\video.less" />
+    <None Include="wwwroot\less\general\block-space.less" />
+    <None Include="wwwroot\less\general\buttons.less" />
+    <None Include="wwwroot\less\general\general.less" />
+    <None Include="wwwroot\less\general\page-preloader.less" />
+    <None Include="wwwroot\less\general\responsive.less" />
+    <None Include="wwwroot\less\general\typography.less" />
+    <None Include="wwwroot\less\style.less" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
@@ -50,6 +153,73 @@
     <Folder Include="wwwroot\lib\jquery-validation\dist\" />
     <Folder Include="wwwroot\lib\jquery\" />
     <Folder Include="wwwroot\lib\jquery\dist\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\lib\bootstrap\css\bootstrap-theme.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\css\bootstrap-theme.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\css\bootstrap-theme.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\css\bootstrap-theme.min.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\css\bootstrap.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\css\bootstrap.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\css\bootstrap.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\css\bootstrap.min.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\fonts\glyphicons-halflings-regular.eot">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\fonts\glyphicons-halflings-regular.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\fonts\glyphicons-halflings-regular.ttf">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\fonts\glyphicons-halflings-regular.woff">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\fonts\glyphicons-halflings-regular.woff2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\js\bootstrap.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\js\bootstrap.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\js\npm.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

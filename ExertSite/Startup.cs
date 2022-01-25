@@ -37,6 +37,7 @@ namespace ExertSite
                 options.Password.RequiredLength = 5;
                 options.Password.RequireLowercase = true;
                 options.Password.RequireUppercase = false;
+                
             })
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();

@@ -874,7 +874,8 @@ blockquote {
   transition: height 0.3s ease-in-out;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-  
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 .nav-transparent .navbar .navigation {
   background-color: transparent;

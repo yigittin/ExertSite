@@ -55,7 +55,7 @@ namespace ExertSite.Controllers
         // GET: Projects/Create
         public IActionResult Create()
         {
-            ViewData["ServiceId"] = new SelectList(_context.Services, "ServiceId", "ServiceId");
+            ViewData["ServiceId"] = new SelectList(_context.Services, "ServiceId", "ServiceName");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace ExertSite.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProjectId,ProjectImage,ProjectName,ProjectText,ServiceId")] Project project)
+        public async Task<IActionResult> Create( Project project)
         {
             if (ModelState.IsValid)
             {
@@ -111,7 +111,7 @@ namespace ExertSite.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProjectId,ProjectImage,ProjectName,ProjectText,ServiceId")] Project project)
+        public async Task<IActionResult> Edit(int id, Project project)
         {
             if (id != project.ProjectId)
             {
