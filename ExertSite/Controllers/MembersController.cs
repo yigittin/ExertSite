@@ -146,7 +146,8 @@ namespace ExertSite.Controllers
                     dbImage.MemberRole = member.MemberRole;
                     dbImage.MemberTwitter = member.MemberTwitter;
                     dbImage.MemberName = member.MemberName;
-                    dbImage.MemberSmallText = member.MemberSmallText;
+                    dbImage.MemberWebsite = member.MemberWebsite;
+                    
                     
                     await _context.SaveChangesAsync();
                 }

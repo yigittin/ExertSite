@@ -18,6 +18,7 @@ namespace ExertSite.Models
         public IEnumerable<ExertSite.Models.Clients> Clients { get; set; }
 
         public IEnumerable<ExertSite.Models.Member> Members { get; set; }
+        public IEnumerable<ExertSite.Models.Contact> Contacts { get; set; }
 
         public IEnumerable<ExertSite.Models.SiteOperations> SiteOperations { get; set; }
 

@@ -17,11 +17,7 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="MemberId" />
-            <div class="form-group">
-                <label asp-for="MemberSmallText" class="control-label"></label>
-                <input asp-for="MemberSmallText" class="form-control" />
-                <span asp-validation-for="MemberSmallText" class="text-danger"></span>
-            </div>
+         
             <div class="form-group">
                 <label asp-for="MemberName" class="control-label"></label>
                 <input asp-for="MemberName" class="form-control" />
@@ -36,6 +32,11 @@
                 <label asp-for="MemberImage" class="control-label"></label>
                 <input asp-for="MemberImage" class="form-control" />
                 <span asp-validation-for="MemberImage" class="text-danger"></span>
+                <div class="form-group">
+                    <label asp-for="MemberWebsite" class="control-label"></label>
+                    <input asp-for="MemberWebsite" class="form-control" />
+                    <span asp-validation-for="MemberWebsite" class="text-danger"></span>
+                </div>
             </div>
             <div class="form-group">
                 <label asp-for="MemberTwitter" class="control-label"></label>

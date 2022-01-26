@@ -35,7 +35,7 @@
                             <div class="logo-container">
                                 <div class="logo-wrap local-scroll">
                                     <a href="#home">
-                                        <img class="logo" src="img/logo.png" alt="logo" data-rjs="2">
+                                        <img class="logo w-50 h-50" src="~/images/Logo/pageLogo.svg" alt="logo" data-rjs="2">
                                     </a>
                                 </div>
                             </div>
@@ -162,11 +162,11 @@
                         @if (items.SliderPosition == 2)
                         {
 
-                            <!-- slider Item 2 -->
+
                             <li data-index="rs-3" data-transition="slideremoveright" data-slotamount="default" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off">
                                 <img src="@ExertSite.Models.SiteOperations.SliderFolder@items.SliderImage" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 
-                                <!-- LAYER NR. 1 -->
+
                                 <div class="tp-caption NotGeneric-Title tp-resizeme black-color rs-parallaxlevel-3"
                                      id="slide-2-layer-1"
                                      data-x="['left','left','left','left']" data-hoffset="['0','50','0','0']"
@@ -190,7 +190,7 @@
                                     @Html.Raw(items.SliderText)
                                 </div>
 
-                                <!-- LAYER NR. 2 -->
+
                                 <div class="tp-caption tp-resizeme NotGeneric-Text black-color rs-parallaxlevel-4"
                                      id="slide-2-layer-2"
                                      data-x="['left','left','left','left']" data-hoffset="['0','50','0','0']"
@@ -214,7 +214,7 @@
 
                                 </div>
 
-                                <!-- LAYER NR. 3 -->
+
                                 <div class="tp-caption rs-parallaxlevel-5"
                                      id="slide-2-layer-3"
                                      data-x="['left','left','left','left']" data-hoffset="['0','50','0','0']"
@@ -244,11 +244,10 @@
                         @if (items.SliderPosition == 3)
                         {
 
-                            <!-- slider Item 3 -->
+
                             <li data-index="rs-2" data-slotamount="default" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off">
                                 <img alt="" class="rev-slidebg" data-bgparallax="3" data-bgposition="center center" data-duration="5000" data-ease="Linear.easeNone" data-kenburns="on" data-no-retina="" data-offsetend="0 0" data-offsetstart="0 0" data-rotateend="0" data-rotatestart="0" data-scaleend="100" data-scalestart="110" src="@SiteOperations.SliderFolder@items.SliderImage">
 
-                                <!-- LAYER NR. 1 -->
                                 <div class="tp-caption NotGeneric-Title tp-resizeme white-color rs-parallaxlevel-3"
                                      id="slide-3-layer-1"
                                      data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -273,7 +272,7 @@
 
                                 </div>
 
-                                <!-- LAYER NR. 2 -->
+
                                 <div class="tp-caption NotGeneric-SubTitle white-color tp-resizeme rs-parallaxlevel-2"
                                      id="slide-3-layer-2"
                                      data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -297,7 +296,7 @@
 
                                 </div>
 
-                                <!-- LAYER NR. 3 -->
+
                                 <div class="tp-caption rs-parallaxlevel-5"
                                      id="slide-3-layer-3"
                                      data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -350,32 +349,26 @@
 
             <div class="row">
 
-                @foreach (var items in Model.Services)
-                {
-                    if (items.ServiceId == 1)
-                    {
 
-                        <!-- Service Item 1 -->
-                        <div class="col-md-3 col-sm-6 m-bottom-20">
-                            <div class="service wow zoomIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                                <div class="service-icon">
-                                    <i class="fa fa-desktop" aria-hidden="true"></i>
-                                </div>
-                                <h4>@items.ServiceName</h4>
-                                <div class="service-text">
-                                    @Html.Raw(items.ServiceText)
-                                </div>
-                            </div>
-                        </div> <!-- /.col -->
-                    }
-                }
+                <!-- Service Item 1 -->
+                <div class="col-md-3 col-sm-6 m-bottom-20">
+                    <div class="service wow zoomIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                        <div class="service-icon">
+                            <i class="fa fa-desktop" aria-hidden="true"></i>
+                        </div>
+                        <h4>Web Design</h4>
+                        <div class="service-text">
+                            <p>Web Tasarlıyoruz&nbsp;</p>
+                        </div>
+                    </div>
+                </div> <!-- /.col -->
                 <!-- Service Item 2 -->
                 <div class="col-md-3 col-sm-6 m-bottom-20">
                     <div class="service wow zoomIn" data-wow-duration="1s" data-wow-delay="0.6s">
                         <div class="service-icon">
                             <i class="fa fa-video-camera" aria-hidden="true"></i>
                         </div>
-                        <h4>Video Production</h4>
+                        <h4>Grafik Tasarım</h4>
                         <div class="service-text">
                             <p>Have spot part for his quit may. Enable it is square my an regard. Often merit stuff first oh up hills as his memorey got null in recording.</p>
                         </div>
@@ -387,7 +380,7 @@
                         <div class="service-icon">
                             <i class="fa fa-modx" aria-hidden="true"></i>
                         </div>
-                        <h4>Advertising</h4>
+                        <h4>Eğitim</h4>
                         <div class="service-text">
                             <p>There spoke happy for you are out. Fertile how old address did showing because sitting replied six. Luckily eat joy see own shyness minuter.</p>
                         </div>
@@ -399,7 +392,7 @@
                         <div class="service-icon">
                             <i class="fa fa-briefcase" aria-hidden="true"></i>
                         </div>
-                        <h4>Branding</h4>
+                        <h4>Organizasyon</h4>
                         <div class="service-text">
                             <p>So striking at of to welcomed resolved. Northward by described up household therefore attention. Excellence decisively nay man yet impress.</p>
                         </div>
@@ -602,47 +595,58 @@
         </div> <!-- /.container -->
     </section>
 
+    <!--ORTAKLAR-->
+    <section id="team" class="p-top-80 p-bottom-50">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <!-- Section Title -->
+                    <div class="section-title text-center m-bottom-40">
+                        <h2 class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.6s">ORTAKLARIMIZ</h2>
+                        <div class="divider-center-small wow zoomIn" data-wow-duration="1s" data-wow-delay="0.6s"></div>
+                        <p class="section-subtitle wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"><em>Resolution possession discovered surrounded advantages has but few add. Yet walls times spoil put. Be it reserved contempt rendered smallest. Studied to passage it mention calling believe an.</em></p>
+                    </div>
+                </div> <!-- /.col -->
+            </div>  <!-- /.row -->
+
+            <div class="row">
+                @foreach(var items in Model.Members)
+            {
+
+                <div class="col-md-3 col-sm-6 col-xs-6 p-bottom-30">
+                    <div class="team-item wow zoomIn" data-wow-duration="1s" data-wow-delay="0.9s">
+                        <div class="team-item-image">
+                            <div class="team-item-image-overlay">
+                                <div class="team-item-icons">
+                                    <a href="https://twitter.com/@items.MemberTwitter"><i class="fa fa-twitter"></i></a>
+                                    <a href="https://www.facebook.com/@items.MemberFacebook"><i class="fa fa-facebook"></i></a>
+                                    <a href="@items.MemberWebsite"><i class="fa fa-globe"></i></a>
+                                </div>
+                            </div>
+                            <img src="@items.MemberImage" alt="" />
+                        </div>
+                        <div class="team-item-info">
+                            <div class="team-item-name">
+                                @items.MemberName
+                            </div>
+                            <div class="team-item-position">
+                                @items.MemberRole
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            }
+                
+             
+
+            </div> <!-- /.row -->
+
+        </div> <!-- /.container -->
+    </section>
+    <!-- End Team -->
 
 
-    <!-- Start Testimonial -->
-    <!--<section id="testimonials" class="parallax-bg overlay-dark p-top-80 p-bottom-80" style="background-image:url(img/testimonial-bg.jpg)" data-stellar-background-ratio="0.5">-->
-    <!-- Section Title -->
-    <!--<div class="section-title text-center white-color m-bottom-40">
-        <h2 class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.6s">Testimonials</h2>
-        <div class="divider-center-small divider-white wow zoomIn" data-wow-duration="1s" data-wow-delay="0.6s"></div>
-    </div>-->
-    <!-- === Testimonials === -->
-    <!--<div id="owl-testimonials" class="owl-carousel owl-theme testimonial text-center white-color">-->
-    <!-- === Testimonial item 1 === -->
-    <!--<div class="testimonial-item text-center">
-        <p class="testimonial-desc">Residence you satisfied and rapturous certainty two. Procured outweigh as outlived so so. On in bringing graceful proposal blessing of marriage outlived. Son rent face our loud near.</p>
-        <div class="testimonial-thumb">
-            <img class="img-responsive" src="img/testimonial/1.jpg" alt="">
-        </div>
-        <h5 class="testimonial-author">Jenny Doe - Star Inc</h5>
-    </div>-->
-    <!-- === Testimonial item 2 === -->
-    <!--<div class="testimonial-item text-center">
-        <p class="testimonial-desc">Excellent so to no sincerity smallness. Removal request delight if on he we. Unaffected in we by apartments astonished to decisively themselves. Offended ten old consider speaking.</p>
-        <div class="testimonial-thumb">
-            <img class="img-responsive" src="img/testimonial/2.jpg" alt="">
-        </div>
-        <h5 class="testimonial-author">Kathy Doe - Service Corp</h5>
-    </div>-->
-    <!-- === Testimonial item 3 === -->
-    <!--<div class="testimonial-item text-center">
-            <p class="testimonial-desc">Advanced and procured civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages.</p>
-            <div class="testimonial-thumb">
-                <img class="img-responsive" src="img/testimonial/3.jpg" alt="">
-            </div>
-            <h5 class="testimonial-author">Jack Doe - Inka Design</h5>
-        </div>
-
-    </div>-->
-    <!-- /#owl-testimonials -->
-    <!--</section>-->
-    <!-- End Testimonial -->
-    <!-- Start client -->
     <section id="client" class="light-bg p-top-80 p-bottom-80">
 
         <!-- Section Title -->
@@ -738,11 +742,11 @@
                 <div id="owl-clients" class="owl-carousel owl-theme client text-center">
 
                     @foreach (var items in Model.Clients)
-                        {
-                            <div class="client-item text-center">
-                                <img class="img-responsive" src="@SiteOperations.ClientFolder@items.ClientImage" alt="">
-                            </div>
-                        }
+                    {
+                        <div class="client-item text-center">
+                            <img class="img-responsive" src="@SiteOperations.ClientFolder@items.ClientImage" alt="">
+                        </div>
+                    }
                     <!-- === Client 1 === -->
                     <!-- === Client 2 === -->
                     <div class="client-item text-center">
@@ -800,85 +804,92 @@
             <div class="row">
 
                 <!-- === Contact Form === -->
+                <!--
+    <div class="contact-form row">
+
+        <form name="ajax-form" id="ajax-form" action="contact.php" method="post">
+            <div class="col-sm-6 contact-form-item wow zoomIn">
+                <input name="name" id="name" type="text" placeholder="Your Name: *" />
+                <span class="error" id="err-name">please enter name</span>
+            </div>
+            <div class="col-sm-6 contact-form-item wow zoomIn">
+                <input name="email" id="email" type="text" placeholder="E-Mail: *" />
+                <span class="error" id="err-email">please enter e-mail</span>
+                <span class="error" id="err-emailvld">e-mail is not a valid format</span>
+            </div>
+            <div class="col-sm-12 contact-form-item wow zoomIn">
+                <textarea name="message" id="message" placeholder="Your Message"></textarea>
+            </div>
+            <div class="col-sm-12 contact-form-item">
+                <button class="send_message btn btn-main btn-theme wow fadeInUp" id="send" data-lang="en">submit</button>
+            </div>
+            <div class="clear"></div>
+            <div class="error text-align-center" id="err-form">There was a problem validating the form please check!</div>
+            <div class="error text-align-center" id="err-timedout">The connection to the server timed out!</div>
+            <div class="error" id="err-state"></div>
+        </form>
+
+        <div class="clearfix"></div>
+        <div id="ajaxsuccess">Successfully sent!!</div>
+        <div class="clear"></div>
+
+    </div>-->
+                <!-- /.contacts-form & inner row -->
                 <div class="col-md-7 col-sm-7 p-bottom-30">
-                    <div class="contact-form row">
+                    <img src="~/images/Logo/contactLogo.svg" style="width:80%" />
+                </div>
 
-                        <form name="ajax-form" id="ajax-form" action="contact.php" method="post">
-                            <div class="col-sm-6 contact-form-item wow zoomIn">
-                                <input name="name" id="name" type="text" placeholder="Your Name: *" />
-                                <span class="error" id="err-name">please enter name</span>
-                            </div>
-                            <div class="col-sm-6 contact-form-item wow zoomIn">
-                                <input name="email" id="email" type="text" placeholder="E-Mail: *" />
-                                <span class="error" id="err-email">please enter e-mail</span>
-                                <span class="error" id="err-emailvld">e-mail is not a valid format</span>
-                            </div>
-                            <div class="col-sm-12 contact-form-item wow zoomIn">
-                                <textarea name="message" id="message" placeholder="Your Message"></textarea>
-                            </div>
-                            <div class="col-sm-12 contact-form-item">
-                                <button class="send_message btn btn-main btn-theme wow fadeInUp" id="send" data-lang="en">submit</button>
-                            </div>
-                            <div class="clear"></div>
-                            <div class="error text-align-center" id="err-form">There was a problem validating the form please check!</div>
-                            <div class="error text-align-center" id="err-timedout">The connection to the server timed out!</div>
-                            <div class="error" id="err-state"></div>
-                        </form>
-
-                        <div class="clearfix"></div>
-                        <div id="ajaxsuccess">Successfully sent!!</div>
-                        <div class="clear"></div>
-
-                    </div> <!-- /.contacts-form & inner row -->
-                </div> <!-- /.col -->
+                <!-- /.col -->
                 <!-- === Contact Information === -->
-                <div class="col-md-5 col-sm-5 p-bottom-30">
-                    <address class="contact-info">
+                @foreach (var items in Model.Contacts)
+                {
+                    <div class="col-md-5 col-sm-5 p-bottom-30">
+                        <address class="contact-info">
 
-                        <p class="m-bottom-30 wow slideInRight">Spring formal no county ye waited. My whether cheered at regular it of promise blushes perhaps.</p>
+                            <p class="m-bottom-30 wow slideInRight">@Html.Raw(items.ContactSmallText)</p>
 
-                        <!-- === Location === -->
-                        <div class="m-top-20 wow slideInRight">
-                            <div class="contact-info-icon">
-                                <i class="fa fa-location-arrow"></i>
+                            <!-- === Location === -->
+                            <div class="m-top-20 wow slideInRight">
+                                <div class="contact-info-icon">
+                                    <i class="fa fa-location-arrow"></i>
+                                </div>
+                                <div class="contact-info-title">
+                                    Address:
+                                </div>
+                                <div class="contact-info-text">
+                                    @Html.Raw(items.AddressText)
+                                </div>
                             </div>
-                            <div class="contact-info-title">
-                                Address:
-                            </div>
-                            <div class="contact-info-text">
-                                149 Null Street, New York, NY 098
-                            </div>
-                        </div>
 
-                        <!-- === Phone === -->
-                        <div class="m-top-20 wow slideInRight">
-                            <div class="contact-info-icon">
-                                <i class="fa fa-phone"></i>
+                            <!-- === Phone === -->
+                            <div class="m-top-20 wow slideInRight">
+                                <div class="contact-info-icon">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+                                <div class="contact-info-title">
+                                    Phone number:
+                                </div>
+                                <div class="contact-info-text">
+                                    @items.PhoneNumber
+                                </div>
                             </div>
-                            <div class="contact-info-title">
-                                Phone number:
-                            </div>
-                            <div class="contact-info-text">
-                                +1-000-1111-3333
-                            </div>
-                        </div>
 
-                        <!-- === Mail === -->
-                        <div class="m-top-20 wow slideInRight">
-                            <div class="contact-info-icon">
-                                <i class="fa fa-envelope"></i>
+                            <!-- === Mail === -->
+                            <div class="m-top-20 wow slideInRight">
+                                <div class="contact-info-icon">
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <div class="contact-info-title">
+                                    Email:
+                                </div>
+                                <div class="contact-info-text">
+                                    @items.EMail
+                                </div>
                             </div>
-                            <div class="contact-info-title">
-                                Email:
-                            </div>
-                            <div class="contact-info-text">
-                                support@tabthemes.com
-                            </div>
-                        </div>
 
-                    </address>
-                </div> <!-- /.col -->
-
+                        </address>
+                    </div> <!-- /.col -->
+                }
             </div> <!-- /.row -->
         </div> <!-- /.container -->
     </section>
@@ -1032,5 +1043,5 @@
                 }
             }); /*ready*/</script>
     }
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 </body>
