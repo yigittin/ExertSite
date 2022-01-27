@@ -193,7 +193,14 @@ namespace ExertSite.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var slider = await _context.Sliders.FindAsync(id);            
+            var slider = await _context.Sliders.FindAsync(id);
+            var webRootPath = _hostingEnvironment.WebRootPath;
+            var dbImage = _context.Sliders.FirstOrDefault(x => x.SliderId == slider.SliderId);
+            var oldLink = webRootPath + @"/" + SiteOperations.SliderFolder + @"/" + dbImage.SliderImage.ToString();
+            if (System.IO.File.Exists(oldLink))
+            {
+                System.IO.File.Delete(oldLink);
+            }
             _context.Sliders.Remove(slider);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

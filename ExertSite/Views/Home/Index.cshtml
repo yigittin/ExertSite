@@ -35,7 +35,7 @@
                             <div class="logo-container">
                                 <div class="logo-wrap local-scroll">
                                     <a href="#home">
-                                        <img class="logo w-50 h-50" src="~/images/Logo/pageLogo.svg" alt="logo" data-rjs="2">
+                                        <img class="logo" src="~/images/Logo/pageLogo.svg" alt="logo" data-rjs="2">
                                     </a>
                                 </div>
                             </div>
@@ -317,13 +317,93 @@
                                      data-responsive_offset="on"
                                      data-responsive="off"
                                      style="">
-                                    <a href='#' class='btn btn-main btn-transparent-light'>Purchase Now</a>
                                 </div>
 
                             </li>
                         }
 
 
+                        @if (items.SliderPosition == 4)
+                        {
+
+
+                            <li data-index="rs-3" data-transition="slideremoveright" data-slotamount="default" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off">
+                                <img src="@ExertSite.Models.SiteOperations.SliderFolder@items.SliderImage" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+
+
+                                <div class="tp-caption NotGeneric-Title tp-resizeme black-color rs-parallaxlevel-3"
+                                     id="slide-2-layer-1"
+                                     data-x="['left','left','left','left']" data-hoffset="['0','50','0','0']"
+                                     data-y="['middle','middle','middle','middle']" data-voffset="['-100','-100','-100','-85']"
+                                     data-fontsize="['70','60','60','36']"
+                                     data-lineheight="['70','60','60','50']"
+                                     data-width="none"
+                                     data-height="none"
+                                     data-whitespace="nowrap"
+                                     data-transform_idle="o:1;"
+                                     data-transform_in="y:[100%];z:0;rx:0deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
+                                     data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                     data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                     data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                     data-start="1000"
+                                     data-splitin="chars"
+                                     data-splitout="none"
+                                     data-responsive_offset="on"
+                                     data-elementdelay="0.05"
+                                     style="z-index: 5; white-space: nowrap;">
+                                    @Html.Raw(items.SliderText)
+                                </div>
+
+
+                                <div class="tp-caption tp-resizeme NotGeneric-Text black-color rs-parallaxlevel-4"
+                                     id="slide-2-layer-2"
+                                     data-x="['left','left','left','left']" data-hoffset="['0','50','0','0']"
+                                     data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','-10']"
+                                     data-fontsize="['18','18','20','14']"
+                                     data-lineheight="['28','28','32','24']"
+                                     data-width="none"
+                                     data-height="none"
+                                     data-whitespace="nowrap"
+                                     data-transform_idle="o:1;"
+                                     data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                                     data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                     data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                                     data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                     data-start="1500"
+                                     data-splitin="none"
+                                     data-splitout="none"
+                                     data-responsive_offset="on"
+                                     style="z-index: 6;">
+                                    @Html.Raw(items.SliderDesc)
+
+                                </div>
+
+
+                                <div class="tp-caption rs-parallaxlevel-5"
+                                     id="slide-2-layer-3"
+                                     data-x="['left','left','left','left']" data-hoffset="['0','50','0','0']"
+                                     data-y="['middle','middle','middle','middle']" data-voffset="['105','105','115','85']"
+                                     data-width="none"
+                                     data-height="none"
+                                     data-whitespace="nowrap"
+                                     data-transform_idle="o:1;"
+                                     data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
+                                     data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
+                                     data-transform_in="y:50px;opacity:0;s:1500;e:Power4.easeInOut;"
+                                     data-transform_out="y:[175%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                     data-mask_out="x:inherit;y:inherit;"
+                                     data-start="2000"
+                                     data-splitin="none"
+                                     data-splitout="none"
+                                     data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]'
+                                     data-responsive_offset="on"
+                                     data-responsive="off"
+                                     style="">
+                                    <a data-scroll href='#portfolio' class='btn btn-main btn-black'>View Projects</a>
+                                </div>
+
+                            </li>
+                        }
                     }
                 </ul>
                 <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
@@ -603,7 +683,7 @@
                 <div class="col-md-8 col-md-offset-2">
                     <!-- Section Title -->
                     <div class="section-title text-center m-bottom-40">
-                        <h2 class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.6s">ORTAKLARIMIZ</h2>
+                        <h2 class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.6s">İŞTİRAKLERİMİZ</h2>
                         <div class="divider-center-small wow zoomIn" data-wow-duration="1s" data-wow-delay="0.6s"></div>
                         <p class="section-subtitle wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"><em>Resolution possession discovered surrounded advantages has but few add. Yet walls times spoil put. Be it reserved contempt rendered smallest. Studied to passage it mention calling believe an.</em></p>
                     </div>
@@ -611,34 +691,34 @@
             </div>  <!-- /.row -->
 
             <div class="row">
-                @foreach(var items in Model.Members)
-            {
+                @foreach (var items in Model.Members)
+                {
 
-                <div class="col-md-3 col-sm-6 col-xs-6 p-bottom-30">
-                    <div class="team-item wow zoomIn" data-wow-duration="1s" data-wow-delay="0.9s">
-                        <div class="team-item-image">
-                            <div class="team-item-image-overlay">
-                                <div class="team-item-icons">
-                                    <a href="https://twitter.com/@items.MemberTwitter"><i class="fa fa-twitter"></i></a>
-                                    <a href="https://www.facebook.com/@items.MemberFacebook"><i class="fa fa-facebook"></i></a>
-                                    <a href="@items.MemberWebsite"><i class="fa fa-globe"></i></a>
+                    <div class="col-md-3 col-sm-6 col-xs-6 p-bottom-30">
+                        <div class="team-item wow zoomIn" data-wow-duration="1s" data-wow-delay="0.9s">
+                            <div class="team-item-image">
+                                <div class="team-item-image-overlay">
+                                    <div class="team-item-icons">
+                                        <a href="https://twitter.com/@items.MemberTwitter"><i class="fa fa-twitter"></i></a>
+                                        <a href="https://www.facebook.com/@items.MemberFacebook"><i class="fa fa-facebook"></i></a>
+                                        <a href="@items.MemberWebsite"><i class="fa fa-globe"></i></a>
+                                    </div>
                                 </div>
+                                <img src="@items.MemberImage" alt="" />
                             </div>
-                            <img src="@items.MemberImage" alt="" />
-                        </div>
-                        <div class="team-item-info">
-                            <div class="team-item-name">
-                                @items.MemberName
-                            </div>
-                            <div class="team-item-position">
-                                @items.MemberRole
+                            <div class="team-item-info">
+                                <div class="team-item-name">
+                                    @items.MemberName
+                                </div>
+                                <div class="team-item-position">
+                                    @items.MemberRole
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div> 
-            }
-                
-             
+                }
+
+
 
             </div> <!-- /.row -->
 
@@ -805,39 +885,40 @@
 
                 <!-- === Contact Form === -->
                 <!--
-    <div class="contact-form row">
+                <div class="contact-form row">
 
-        <form name="ajax-form" id="ajax-form" action="contact.php" method="post">
-            <div class="col-sm-6 contact-form-item wow zoomIn">
-                <input name="name" id="name" type="text" placeholder="Your Name: *" />
-                <span class="error" id="err-name">please enter name</span>
-            </div>
-            <div class="col-sm-6 contact-form-item wow zoomIn">
-                <input name="email" id="email" type="text" placeholder="E-Mail: *" />
-                <span class="error" id="err-email">please enter e-mail</span>
-                <span class="error" id="err-emailvld">e-mail is not a valid format</span>
-            </div>
-            <div class="col-sm-12 contact-form-item wow zoomIn">
-                <textarea name="message" id="message" placeholder="Your Message"></textarea>
-            </div>
-            <div class="col-sm-12 contact-form-item">
-                <button class="send_message btn btn-main btn-theme wow fadeInUp" id="send" data-lang="en">submit</button>
-            </div>
-            <div class="clear"></div>
-            <div class="error text-align-center" id="err-form">There was a problem validating the form please check!</div>
-            <div class="error text-align-center" id="err-timedout">The connection to the server timed out!</div>
-            <div class="error" id="err-state"></div>
-        </form>
+                    <form name="ajax-form" id="ajax-form" action="contact.php" method="post">
+                        <div class="col-sm-6 contact-form-item wow zoomIn">
+                            <input name="name" id="name" type="text" placeholder="Your Name: *" />
+                            <span class="error" id="err-name">please enter name</span>
+                        </div>
+                        <div class="col-sm-6 contact-form-item wow zoomIn">
+                            <input name="email" id="email" type="text" placeholder="E-Mail: *" />
+                            <span class="error" id="err-email">please enter e-mail</span>
+                            <span class="error" id="err-emailvld">e-mail is not a valid format</span>
+                        </div>
+                        <div class="col-sm-12 contact-form-item wow zoomIn">
+                            <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                        </div>
+                        <div class="col-sm-12 contact-form-item">
+                            <button class="send_message btn btn-main btn-theme wow fadeInUp" id="send" data-lang="en">submit</button>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="error text-align-center" id="err-form">There was a problem validating the form please check!</div>
+                        <div class="error text-align-center" id="err-timedout">The connection to the server timed out!</div>
+                        <div class="error" id="err-state"></div>
+                    </form>
 
-        <div class="clearfix"></div>
-        <div id="ajaxsuccess">Successfully sent!!</div>
-        <div class="clear"></div>
+                    <div class="clearfix"></div>
+                    <div id="ajaxsuccess">Successfully sent!!</div>
+                    <div class="clear"></div>
 
-    </div>-->
+                </div>-->
                 <!-- /.contacts-form & inner row -->
-                <div class="col-md-7 col-sm-7 p-bottom-30">
-                    <img src="~/images/Logo/contactLogo.svg" style="width:80%" />
+                <div class="col-md-7 col-sm-7 p-bottom-30 row">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d377.6872269411433!2d30.37088951468049!3d40.77306869999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409df6289b6a9fc1%3A0x4ab92986fdc204e4!2sYuxek%20Internet%20Technologies!5e0!3m2!1str!2str!4v1643275149548!5m2!1str!2str" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
+
 
                 <!-- /.col -->
                 <!-- === Contact Information === -->

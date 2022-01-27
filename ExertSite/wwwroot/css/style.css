@@ -233,17 +233,17 @@ overlay-light .YTPOverlay:before {
   text-decoration: none;
   opacity: 0;
 }
-#back-to-top i {
-  width: 32px;
-  height: 32px;
-  line-height: 32px;
-  color: #fff;
-  font-size: 20px;
-  background: #ed5f5e;
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
+    #back-to-top i {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        color: #fff;
+        font-size: 20px;
+        background: #e01748;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
 #back-to-top i:hover {
   background: #e51b1a;
 }
@@ -542,7 +542,7 @@ p {
 .black-color h6,
 .black-color p,
 .black-color li {
-  color: #000 !important;
+  color: #fff !important;
 }
 .theme-color,
 .theme-color h1,
@@ -825,7 +825,7 @@ blockquote {
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  width:65%;
+  width:43%;
 }
 .navbar-nav {
   margin: 0;
@@ -1077,13 +1077,13 @@ blockquote {
   transition: all 0.3s ease-in-out;
 }
 .service-icon {
-  background-color: #ed5f5e;
-  color: #fff;
-  width: 44px;
-  height: 44px;
-  text-align: center;
-  font-size: 23px;
-  line-height: 42px;
+    background-color: #e01748;
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    font-size: 23px;
+    line-height: 42px;
 }
 .service h4 {
   text-transform: uppercase;
@@ -1970,15 +1970,15 @@ blockquote {
   padding-left: 30px;
 }
 .contact-info-icon {
-  float: left;
-  background-color: #ed5f5e;
-  color: #fff;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  font-size: 18px;
-  line-height: 40px;
-  margin-right: 18px;
+    float: left;
+    background-color: #e01748;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    margin-right: 18px;
 }
 .contact-info-title {
   font-weight: 700;

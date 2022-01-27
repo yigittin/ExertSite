@@ -178,6 +178,13 @@ namespace ExertSite.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var project = await _context.Projects.FindAsync(id);
+            var webRootPath = _hostingEnvironment.WebRootPath;
+            var dbImage = _context.Projects.FirstOrDefault(x => x.ProjectId == project.ProjectId);
+            var oldLink = webRootPath + @"/" + SiteOperations.ProjectsFolder + @"/" + dbImage.ProjectImage.ToString();
+            if (System.IO.File.Exists(oldLink))
+            {
+                System.IO.File.Delete(oldLink);
+            }
             _context.Projects.Remove(project);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
